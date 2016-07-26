@@ -7,7 +7,7 @@ from pprint import pprint
 from xvfbwrapper import Xvfb
 def parse(url):
 
-    searchKey = "Mumbai"
+    searchKey = "Las Vegas" # Change this to your city 
     checkInDate = '27/08/2016' #Format %d/%m/%Y
     checkOutDate = '29/08/2016' #Format %d/%m/%Y
     response = webdriver.Firefox()
@@ -37,7 +37,7 @@ def parse(url):
 
     parser = html.fromstring(response.page_source,response.current_url)
     hotels = parser.xpath('//div[@class="hotel-wrap"]')
-    for hotel in hotels[:5]:
+    for hotel in hotels[:5]: #Replace 5 with 1 to just get the cheapest hotel
         hotelName = hotel.xpath('.//h3/a')
         hotelName = hotelName[0].text_content() if hotelName else None
         price = hotel.xpath('.//div[@class="price"]/a//ins')
