@@ -5,8 +5,8 @@ from time import sleep
 from selenium import webdriver
 from pprint import pprint
 from xvfbwrapper import Xvfb
-def parse(url):
 
+def parse(url):
     searchKey = "Las Vegas" # Change this to your city 
     checkInDate = '27/08/2016' #Format %d/%m/%Y
     checkOutDate = '29/08/2016' #Format %d/%m/%Y
